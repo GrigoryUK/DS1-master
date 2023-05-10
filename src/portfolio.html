@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@include('partials/head.html')
+
+<body class="page__body">
+	<div class="site-container site-portfolio">
+		<div class="container--main">
+			<div class="top" id="top"></div>
+			@include('partials/header.html')
+
+			<div class="container--start">
+				<div class="container">
+					<div class="breadcrumb__container">
+						<div class="breadcrumbs">
+							<span class="first-item">
+								<a href="#">Главная</a>
+							</span>
+							<span class="separator">-</span>
+							<span class="last-item">Портфолио</span>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="titleComponent">
+						<h1>Портфолио</h1>
+					</div>
+				</div>
+			</div>
+			@include('partials/portfolio.html')
+
+		</div>
+		@include('partials/footer.html')
+		@include('partials/menu.html')
+		<!-- <div id="trigger"></div> -->
+		<!-- @include('html/h1.html') пример include -->
+	</div>
+</body>
+
+</html>

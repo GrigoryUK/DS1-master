@@ -1,0 +1,45 @@
+.breadcrumbs {
+	margin-bottom: 60px;
+
+	@include mobile {
+		margin-bottom: 40px;
+	}
+
+	span > a {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.4;
+		color: var(--primary2);
+		opacity: 0.5;
+
+		@include mobile {
+			font-size: 12px;
+		}
+
+		@include hover {
+			opacity: 1;
+		}
+	}
+
+	.separator {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.4;
+		opacity: 0.5;
+
+		@include mobile {
+			font-size: 12px;
+		}
+	}
+
+	.last-item {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.4;
+		opacity: 0.5;
+
+		@include mobile {
+			font-size: 12px;
+		}
+	}
+}

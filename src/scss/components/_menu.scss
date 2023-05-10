@@ -1,0 +1,304 @@
+.menu--always {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--primary4);
+	z-index: var(--z-menu);
+	opacity: 0;
+	visibility: hidden;
+	padding-top: 30px;
+	transition: all 0.3s ease-in-out;
+
+	&.menu--active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@include mobile {
+		padding-top: 15px;
+	}
+
+	span {
+		color: var(--primary1);
+	}
+
+	a {
+		color: var(--primary1);
+	}
+
+	.line {
+		display: block;
+		width: 0%;
+		height: 1px;
+		background: #686868;
+		transition: all 1s ease-in-out;
+
+		
+
+		&.active {
+			width: 100%;
+		}
+	}
+
+
+	ul {
+		margin: 0;
+		list-style: none;
+		padding: 0;
+	}
+
+	.menu {
+
+		&__close {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 60px;
+
+			@include big-desktop {
+				margin-bottom: 30px;
+			}
+
+			@include tablet {
+				margin-bottom: 0;
+			}
+
+			@include mobile {
+				position: absolute;
+				top: 16px;
+				right: 18px;
+			}
+		}
+
+		&__social {
+
+			
+
+			ul>li>a>svg {
+				fill: var(--primary1);
+				width: 32px;
+				height: 32px;
+
+				@include hover {
+					fill: var(--primary3);
+				}
+			}
+
+			ul>li>a {
+				position: relative;
+
+			}
+		}
+
+		&__container {
+
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+
+			&--box {
+				max-width: 1518px;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+
+				@include tablet {
+					flex-direction: column;
+				}
+			}
+		}
+
+		&__list {
+
+			@include small-tablet {
+				margin-bottom: 50px;
+			}
+
+			@include mobile {
+				margin-bottom: 30px;
+			}
+			ul>li {
+				@include mb(34px);
+
+				@include tablet {
+					@include mb(10px);
+				}
+
+				&.active {
+
+					a {
+						&::after {
+							width: 100%;
+						}
+					}
+				}
+
+				&.transition {
+					a {
+						&::after {
+							transition: all 0.2s ease;
+						}
+					}
+				}
+			}
+
+			ul>li>a {
+				font-weight: 300;
+				font-size: 54px;
+				position: relative;
+
+				@include big-desktop {
+					font-size: 46px;
+				}
+
+				@include mobile {
+					font-size: 24px;
+				}
+
+				&::after {
+					display: block;
+					position: absolute;
+					left: 0;
+					width: 0;
+					height: 1px;
+					background-color: #686868;
+					content: "";
+					transition: all 1s ease-in-out;
+				}
+
+				@include hover {
+					color: var(--primary3);
+
+					&::after {
+						background-color: var(--primary3);
+					}
+				}
+			}
+		}
+
+		&__description {
+			max-width: 852px;
+			width: 100%;
+			margin-top: 20px;
+
+			@include big-desktop {
+				max-width: 710px;
+			}
+
+			@include tablet {
+				max-width: 100%;
+				margin-top: 0;
+			}
+
+			.line {
+				margin-bottom: 30px;
+
+				@include mobile {
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		&__box {
+			margin-bottom: 20px;
+
+			ul>li>a {
+				font-family: 'Inter';
+				font-weight: 300;
+				font-size: 22px;
+				line-height: 220%;
+
+				@include big-desktop {
+					font-size: 18px;
+				}
+
+				@include mobile {
+					font-size: 16px;
+				}
+
+				@include hover {
+					color: var(--primary3);
+				}
+			}
+
+			ul>li>span {
+				font-family: 'Inter';
+				font-weight: 300;
+				font-size: 22px;
+				line-height: 220%;
+
+				@include big-desktop {
+					font-size: 18px;
+				}
+
+				@include mobile {
+					font-size: 16px;
+				}
+			}
+		}
+
+		&__social {
+			margin-bottom: 70px;
+
+			@include big-desktop {
+				margin-bottom: 50px;
+			}
+
+			@include tablet {
+				margin-bottom: 30px;
+			}
+
+			@include small-tablet {
+				margin-bottom: 50px;
+			}
+
+			@include mobile {
+				margin-bottom: 30px;
+			}
+
+			ul {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+
+				@include mobile {
+					gap: 20px;
+				}
+			}
+
+			ul>li>a>svg {
+
+				@include hover {
+					fill: var(--primary3);
+				}
+			}
+		}
+
+		&__button {
+			a {
+				display: inline-block;
+				padding: 19px 42px;
+				background: var(--primary1);
+				border-radius: 100px;
+				color: var(--primary2);
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 140%;
+				text-align: center;
+
+				@include hover {
+					color: var(--primary1);
+					background: var(--primary3);
+				}
+
+				@include mobile {
+					padding: 15px 0;
+					width: 100%;
+					font-size: 17px;
+				}
+			}
+		}
+	}
+
+}

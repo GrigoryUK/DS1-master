@@ -1,0 +1,29 @@
+.portfolio {
+	padding-bottom: 150px;
+	background: var(--primary1);
+
+	@include tablet {
+		padding-bottom: 100px;
+	}
+
+	@include mobile {
+		padding-bottom: 70px;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 40px;
+		column-gap: 30px;
+
+		@include tablet {
+			column-gap: 15px;
+			row-gap: 30px;
+		}
+
+		@include mobile {
+			column-gap: 0px;
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}

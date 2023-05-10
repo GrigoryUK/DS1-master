@@ -1,0 +1,145 @@
+.agency {
+
+	&__container {
+
+		.projectMain {
+			margin-bottom: 150px;
+
+			@include big-desktop {
+				margin-bottom: 100px;
+			}
+
+			@include tablet {
+				margin-bottom: 70px;
+			}
+
+			@include mobile {
+				margin-bottom: 50px;
+			}
+		}
+
+
+	}
+}
+
+.sectionAgency {
+	padding-bottom: 150px;
+
+	@include tablet {
+		padding-bottom: 100px;
+	}
+
+	@include mobile {
+		padding-bottom: 70px;
+	}
+
+	.textComponent.center {
+		max-width: 1030px;
+		margin: 0 auto;
+		margin-bottom: 150px;
+
+		@include tablet {
+			margin-bottom: 70px;
+		}
+
+		@include mobile {
+			margin-bottom: 50px;
+		}
+
+	}
+
+	.sectionClient {
+		margin-bottom: 150px;
+
+		@include tablet {
+			margin-bottom: 100px;
+		}
+	
+		@include mobile {
+			margin-bottom: 70px;
+		}
+	}
+}
+
+.sectionClient {
+
+	.titleComponent {
+		margin-bottom: 50px;
+
+		@include tablet {
+			margin-bottom: 40px;
+		}
+
+		@include mobile {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__box {
+		position: relative;
+		display: grid;
+		overflow: hidden;
+		grid-template-columns: repeat(5, 1fr);
+		margin-bottom: 70px;
+
+		@include tablet {
+			margin-bottom: 50px;
+		}
+
+		@include mobile {
+			margin-bottom: 40px;
+		}
+
+		@include tablet {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include mobile {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&.short {
+
+			.item {
+
+				&:nth-child(n + 16) {
+					opacity: 0;
+					visibility: hidden;
+					position: absolute;
+					bottom: 100%;
+				}
+			}
+		}
+		.item {
+			position: relative;
+			height: 162px;
+			transition: all 0.4s ease-in-out;
+
+			@include tablet {
+				height: 154px;
+			}
+
+			@include mobile {
+				height: 100px;
+			}
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: auto;
+				height: auto;
+
+				@include big-desktop {
+					max-width: 50%;
+				}
+
+				@include mobile {
+					max-width: 34%;
+					// max-width: 100%;
+					// width: 40%;
+				}
+			}
+		}
+	}
+}

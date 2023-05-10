@@ -1,0 +1,97 @@
+.burger {
+	
+	width: 40px;
+	height: 40px;
+	position: relative;
+
+	@include hover {
+		.burger__line {
+			margin-top: 0;
+		}
+	}
+
+	@include tablet {
+		width: 30px;
+		height: 30px;
+	}
+
+	&--close {
+		width: 40px;
+		height: 40px;
+
+		@include tablet {
+			width: 30px;
+			height: 30px;
+		}
+
+		@include mobile {
+			width: 24px;
+			height: 24px;
+		}
+
+		// @include mobile {
+		// 	position: absolute;
+		// 	top: 20px;
+		// 	right: 18px;
+		// 	width: 30px;
+		// 	height: 30px;
+		// }
+
+		@include hover {
+			.burger__line--close {
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+		}
+	}
+
+
+	&__line {
+		width: 100%;
+		height: 2px;
+		position: absolute;
+		background-color: var(--primary1);
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		transition: all 0.2s ease;
+
+		&:first-child {
+			margin-top: -5px;
+
+			@include small-tablet {
+				margin-top: -4px;
+			}
+		}
+
+		
+
+		&:last-child {
+			margin-top: 5px;
+
+			@include small-tablet {
+				margin-top: 4px;
+			}
+		}
+
+		&--close {
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			background-color: var(--primary1);
+			left: 0%;
+			transform: translateX(-50%) translateY(-50%);
+			transition: all 0.2s ease;
+			
+
+			&:first-child {
+
+				transform: rotate(45deg);
+			}
+
+			&:last-child {
+
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

@@ -1,0 +1,283 @@
+.project {
+
+	&__container {
+		.projectMain {
+			margin-bottom: 110px;
+
+			@include tablet {
+				margin-bottom: 70px;
+			}
+
+			@include mobile {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}
+
+.projectMain {
+	position: relative;
+
+
+	&__start {
+		position: relative;
+	}
+
+	&__fon {
+		background: #000000;
+		opacity: 0.3;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__desk {
+		height: 100vh;
+		width: 100vw;
+
+		@include mobile {
+			display: none;
+		}
+	}
+
+	&__tablet {
+		height: 100vh;
+		width: 100vw;
+
+		display: none;
+
+		@include mobile {
+			display: block;
+			height: 95vh;
+		}
+	}
+
+
+
+	.projectMain__container {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 100%;
+		width: 100%;
+
+
+	}
+
+	.projectMain__block {
+		position: relative;
+		height: 100%;
+		width: 100%;
+
+		.titleComponent {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 1354px;
+			width: 100%;
+			text-align: center;
+
+			@include mobile {
+				display: none;
+			}
+
+			h1 {
+				color: var(--primary1);
+			}
+		}
+
+		.container--start {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-top: 100px;
+
+			@include mobile {
+				padding-top: 60px;
+			}
+
+			.breadcrumbs span>a {
+				color: var(--primary1);
+			}
+
+			.breadcrumbs .separator {
+				color: var(--primary1);
+			}
+
+			.breadcrumbs .last-item {
+				color: var(--primary1);
+			}
+		}
+
+		.buttonComponent {
+			position: absolute;
+			right: 0;
+			bottom: 60px;
+
+			@include tablet {
+				bottom: 30px;
+			}
+
+
+		}
+	}
+
+
+
+}
+
+
+
+.sectionAvatar {
+	max-width: 1030px;
+	margin: 0 auto;
+	margin-bottom: 150px;
+
+	@include tablet {
+		margin-bottom: 70px;
+	}
+
+	@include mobile {
+		margin-bottom: 50px;
+	}
+
+	&__box {
+		margin-bottom: 60px;
+
+		@include tablet {
+			margin-bottom: 40px;
+		}
+
+		@include mobile {
+			margin-bottom: 30px;
+		}
+
+		.titleComponent {
+			margin-bottom: 10px;
+			display: block;
+
+
+		}
+	}
+
+	&__row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 40px;
+
+		@include tablet {
+			gap: 15px;
+		}
+
+		@include mobile {
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.avatarComponent {
+
+			@include mobile {
+				display: flex;
+				align-items: center;
+				gap: 15px;
+			}
+
+			.textComponent {
+				display: none;
+
+				@include mobile {
+					display: block;
+				}
+			}
+		}
+
+
+	}
+
+	&__info {
+		max-width: 790px;
+
+		.textComponent.opacity {
+			margin-bottom: 60px;
+
+			@include tablet {
+				margin-bottom: 50px;
+			}
+
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+}
+
+.sectionProject {
+	padding-bottom: 150px;
+
+	@include tablet {
+		padding-bottom: 100px;
+	}
+
+	@include mobile {
+		padding-bottom: 70px;
+	}
+
+	.textComponent.center {
+		margin: 0 auto;
+		margin-bottom: 150px;
+		max-width: 1140px;
+
+		@include tablet {
+			margin-bottom: 70px;
+		}
+
+		@include mobile {
+			margin-bottom: 50px;
+		}
+	}
+
+	.imageComponent.primary {
+
+		margin-bottom: 150px;
+
+		@include tablet {
+			margin-bottom: 70px;
+		}
+
+		@include mobile {
+			margin-bottom: 50px;
+		}
+
+	}
+
+	.imageComponent.last {
+
+		margin-bottom: 100px;
+
+		@include tablet {
+			margin-bottom: 70px;
+		}
+
+		@include mobile {
+			margin-bottom: 50px;
+		}
+
+	}
+
+	.linkComponent.image {
+		margin-bottom: 70px;
+
+		@include tablet {
+			margin-bottom: 50px;
+		}
+
+		@include mobile {
+			margin-bottom: 40px;
+		}
+	}
+}

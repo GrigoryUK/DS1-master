@@ -1,0 +1,745 @@
+.titleComponent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 150px;
+
+	@include tablet {
+		margin-bottom: 100px;
+	}
+
+	@include mobile {
+		margin-bottom: 60px;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 54px;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		@include tablet {
+			font-size: 46px;
+		}
+
+		@include mobile {
+			font-size: 24px;
+		}
+	}
+
+	.avatar {
+		display: block;
+
+	}
+
+	&.primary {
+
+		display: block;
+
+		h4 {
+			margin: 0;
+			font-weight: 400;
+			font-size: 54px;
+			line-height: 160%;
+			text-transform: uppercase;
+
+			@include tablet {
+				font-size: 46px;
+			}
+
+			@include mobile {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+.itemComponent {
+	display: flex;
+	flex-direction: column;
+	max-width: 845px;
+
+	@include hover {
+		.itemComponent__title {
+			color: var(--primary3);
+		}
+
+		.fon {
+			opacity: 0.1;
+			visibility: visible;
+		}
+	}
+
+	span {
+		display: block;
+		color: var(--primary2);
+	}
+
+	&__image {
+		position: relative;
+		overflow: hidden;
+		max-height: 520px;
+		margin-bottom: 10px;
+
+
+
+
+
+		@include big-desktop {
+			max-height: 370px;
+		}
+
+		.fon {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			background: #000000;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.2s ease;
+		}
+	}
+
+	&__title {
+		font-size: 22px;
+		line-height: 1.4;
+		transition: all 0.2s ease;
+
+		@include tablet {
+			font-size: 18px;
+		}
+
+		@include mobile {
+			font-size: 16px;
+		}
+
+	}
+
+	&__category {
+		font-size: 13px;
+		opacity: 0.5;
+
+		@include tablet {
+			font-size: 12px;
+		}
+
+		@include mobile {}
+	}
+
+}
+
+
+.buttonComponent {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 100px;
+
+
+
+	&.secondary {
+		color: var(--primary1);
+		background: var(--primary2);
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 140%;
+		padding: 13px 40px 16px;
+
+
+		@include mobile {
+			display: block;
+		}
+
+		@include hover {
+			color: var(--primary1);
+			background: var(--primary3);
+		}
+	}
+
+	&.commerce {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 140%;
+		color: var(--primary1);
+		padding: 19px 34px;
+		background: var(--primary2);
+		
+
+		@include tablet {
+			font-size: 14px;
+			line-height: 140%;
+			padding: 20px 27px;
+		}
+
+		@include mobile {
+			padding: 0;
+			color: var(--primary1);
+			text-decoration: underline;
+			text-underline-offset: 4px;
+			text-align: right;
+			background: transparent;
+			line-height: 1.5;
+			max-width: 180px;
+			border-radius: 0;
+		}
+
+		@include hover {
+			color: var(--primary1);
+			background: var(--primary3);
+		}
+	}
+
+	&.toggle {
+		.also {
+			display: none;
+		}
+
+		.return {
+			display: block !important;
+		}
+
+	}
+
+	&.also {
+		padding: 20px 0;
+		border-top: 1px solid var(--primary5);
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 140%;
+		border-radius: 0;
+		text-transform: uppercase;
+		display: flex;
+		width: 100%;
+		color: var(--primary3);
+
+		.return {
+			display: none;
+		}
+
+
+
+
+		@include tablet {
+			font-size: 18px;
+		}
+
+		@include mobile {
+			font-size: 16px;
+		}
+
+		@include hover {
+			background: var(--primary3);
+			border-top: 1px solid var(--primary3);
+			color: var(--primary1);
+			padding-left: 20px;
+		}
+	}
+}
+
+.subtitleComponent {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	h4 {
+		margin: 0;
+	}
+
+	&.error,
+	&.policy {
+		h4 {
+			font-weight: 500;
+			font-size: 28px;
+			text-transform: uppercase;
+			color: var(--primary2);
+
+			@include mobile {
+				font-size: 22px;
+			}
+		}
+	}
+
+	&.services {
+
+
+		h4 {
+			font-weight: 400;
+			font-size: 42px;
+			text-transform: uppercase;
+			color: var(--primary2);
+
+			@include big-desktop {
+				font-size: 40px;
+			}
+
+			@include tablet {
+				font-size: 32px;
+			}
+
+			@include mobile {
+				font-size: 20px;
+			}
+		}
+
+	}
+
+	&.avatar {
+		font-weight: 300;
+		font-size: 28px;
+		line-height: 160%;
+		opacity: 0.5;
+
+		@include tablet {
+			font-size: 24px;
+		}
+
+		@include mobile {
+			font-size: 15px;
+		}
+	}
+
+
+
+
+
+}
+
+.textComponent {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	p {
+		margin: 0;
+	}
+
+	&.error,
+	&.services,
+	&.policy {
+		p {
+			font-weight: 300;
+			font-size: 22px;
+			line-height: 160%;
+
+			@include tablet {
+				font-size: 18px;
+			}
+
+			@include mobile {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&.opacity {
+		gap: 0;
+
+		span {
+			font-weight: 300;
+			line-height: 160%;
+			color: var(--primary6);
+
+			&:nth-child(1) {
+				font-size: 28px;
+
+				@include tablet {
+					font-size: 18px;
+				}
+
+				@include mobile {
+					font-size: 16px;
+				}
+			}
+
+			&:nth-child(2) {
+				font-size: 22px;
+
+				@include tablet {
+					font-size: 18px;
+				}
+
+				@include mobile {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	&.avatar {
+		gap: 2rem;
+
+		p {
+			font-weight: 300;
+			font-size: 28px;
+			line-height: 160%;
+
+			@include tablet {
+				font-size: 24px;
+			}
+
+			@include mobile {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&.center {
+		p {
+			font-weight: 300;
+			font-size: 28px;
+			line-height: 160%;
+
+			@include tablet {
+				font-size: 24px;
+			}
+
+			@include mobile {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&.home {
+
+		p {
+			font-weight: 300;
+			font-size: 32px;
+			line-height: 160%;
+
+			@include tablet {
+				font-size: 24px;
+			}
+
+			@include mobile {
+				font-size: 16px;
+			}
+
+
+		}
+
+
+	}
+
+
+
+}
+
+.avatarComponent {
+
+	img {
+		max-width: 200px;
+		min-width: 200px;
+		border-radius: 100%;
+		overflow: hidden;
+
+		@include tablet {
+			max-width: 106px;
+			min-width: 106px;
+		}
+
+
+	}
+}
+
+.imageComponent {
+
+	&.primary {
+		display: flex;
+		flex-direction: column;
+		gap: 100px;
+
+
+		@include tablet {
+			gap: 50px;
+		}
+
+		@include mobile {
+			gap: 30px;
+		}
+
+		img {
+			height: auto;
+		}
+	}
+
+	&.last {
+		display: flex;
+		flex-direction: column;
+		gap: 100px;
+
+
+		@include tablet {
+			gap: 50px;
+		}
+
+		@include mobile {
+			gap: 30px;
+		}
+
+		img {
+			height: auto;
+		}
+	}
+}
+
+.linkComponent {
+
+	&.image {
+		position: relative;
+		display: flex;
+		max-height: 590px;
+		overflow: hidden;
+
+		@include big-desktop {
+			max-height: 422px;
+		}
+
+		img {
+			height: auto;
+
+			@include mobile {
+				min-height: 290px;
+			}
+		}
+
+		.fon {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: #000000;
+			opacity: 0.3;
+			transition: all 0.2s ease;
+		}
+
+		.box {
+			text-align: center;
+			position: absolute;
+			top: 44%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			span {
+				display: block;
+				color: var(--primary1);
+			}
+
+			.other {
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 140%;
+				text-transform: uppercase;
+				opacity: 0.7;
+				margin-bottom: 106px;
+
+				@include big-desktop {
+					margin-bottom: 68px;
+				}
+
+				@include tablet {
+					font-size: 12px;
+					margin-bottom: 46px;
+				}
+
+				@include mobile {
+					margin-bottom: 60px;
+				}
+
+			}
+
+			.title {
+				font-weight: 500;
+				font-size: 28px;
+				line-height: 140%;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+
+				@include tablet {
+					font-size: 24px;
+					margin-bottom: 5px;
+				}
+
+				@include mobile {
+					font-size: 18px;
+				}
+			}
+
+			.tab {
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 160%;
+				opacity: 0.5;
+
+				@include tablet {
+					font-size: 12px;
+				}
+			}
+		}
+
+		@include hover {
+			.fon {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&.image-center {
+		position: relative;
+		display: flex;
+		max-height: 590px;
+		overflow: hidden;
+
+		@include big-desktop {
+			max-height: 422px;
+		}
+
+		img {
+			height: auto;
+
+			@include mobile {
+				min-height: 290px;
+			}
+		}
+
+		.fon {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: #000000;
+			opacity: 0.3;
+			transition: all 0.2s ease;
+		}
+
+		.box {
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			span {
+				display: block;
+				color: var(--primary1);
+			}
+
+			.other {
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 140%;
+				text-transform: uppercase;
+				opacity: 0.7;
+				margin-bottom: 106px;
+
+				@include big-desktop {
+					margin-bottom: 68px;
+				}
+
+				@include tablet {
+					font-size: 12px;
+					margin-bottom: 46px;
+				}
+
+				@include mobile {
+					margin-bottom: 60px;
+				}
+
+			}
+
+			.title {
+				font-weight: 500;
+				font-size: 28px;
+				line-height: 140%;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+
+				@include tablet {
+					font-size: 24px;
+					margin-bottom: 5px;
+				}
+
+				@include mobile {
+					font-size: 18px;
+				}
+			}
+
+			.tab {
+				font-weight: 400;
+				font-size: 13px;
+				line-height: 160%;
+				opacity: 0.5;
+
+				@include tablet {
+					font-size: 12px;
+				}
+			}
+		}
+
+		@include hover {
+			.fon {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&.projects {
+
+		a {
+			padding: 20px 0;
+			border-top: 1px solid var(--primary5);
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 140%;
+			text-transform: uppercase;
+			display: flex;
+			width: 100%;
+			color: var(--primary3);
+
+			@include tablet {
+				font-size: 18px;
+			}
+
+			@include mobile {
+				font-size: 16px;
+			}
+
+			@include hover {
+				background: var(--primary3);
+				border-top: 1px solid var(--primary3);
+				color: var(--primary1);
+				padding-left: 20px;
+			}
+		}
+	}
+}
+
+.preloaderComponent {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--primary1);
+	z-index: var(--z-preloader);
+	// transition: all 0.2s ease;
+
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 180px;
+		transition: none;
+
+		@include small-tablet {
+			width: 100px;
+		}
+	}
+}
