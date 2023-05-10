@@ -17,17 +17,9 @@ export default function preloader() {
 
       if (isDesktop() || isTablet()) {
         preloaderSetAttr(videoDesk);
-
-        videoDesk.onerror = function () {
-          preloaderHide();
-        };
       }
       if (isMobile()) {
         preloaderSetAttr(videoMobile);
-
-        videoMobile.onerror = function () {
-          preloaderHide();
-        };
       }
     }
 

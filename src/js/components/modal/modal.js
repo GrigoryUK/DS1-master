@@ -36,31 +36,39 @@ function modal() {
 
 
 	(function () {
-		const burger = document?.querySelector('[data-modal-btn]');
+		const buttonsBurger = document?.querySelectorAll('[data-modal-btn]');
 		const menu = document?.querySelector('[data-modal-menu]');
-		const close = document?.querySelector('[data-modal-close]');
+		const buttonsClose = document?.querySelectorAll('[data-modal-close]');
 
-		burger?.addEventListener('click', (e) => {
+    buttonsBurger.forEach(buttonBurger => {
 
-			menu?.classList.toggle('modal--active');
-			if (isDesktop()) {
-				disableScroll.on();
-			} else {
-				disableScrollCustom()
-			}
-		});
+      buttonBurger?.addEventListener('click', (e) => {
 
+        menu?.classList.toggle('modal--active');
+        if (isDesktop()) {
+          disableScroll.on();
+        } else {
+          disableScrollCustom()
+        }
+      });
 
-		close?.addEventListener('click', () => {
-			menu.classList.remove('modal--active');
-			if (isDesktop()) {
-				disableScroll.off();
-			} else {
-				enableScrollCustom()
-			}
+    })
 
 
-		});
+    buttonsClose.forEach(buttonClose => {
+
+      buttonClose?.addEventListener('click', () => {
+        menu.classList.remove('modal--active');
+        if (isDesktop()) {
+          disableScroll.off();
+        } else {
+          enableScrollCustom()
+        }
+      });
+
+    })
+
+
 
 
 	})();
@@ -69,4 +77,4 @@ function modal() {
 
 export {
 	modal
-} 
+}
