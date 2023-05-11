@@ -12,6 +12,24 @@
   }
 }
 
+@mixin big-desktop-110 {
+  @media (max-width: (1750px)) {
+    @content;
+  }
+}
+
+@mixin big-desktop-125 {
+  @media (max-width: (1540px)) {
+    @content;
+  }
+}
+
+@mixin big-desktop-150 {
+  @media (max-width: (1300px)) {
+    @content;
+  }
+}
+
 @mixin mac-desktop {
   @media (max-width: (1366px)) {
     @content;

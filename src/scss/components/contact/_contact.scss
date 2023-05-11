@@ -1,154 +1,158 @@
 .contact {
+  &__container {
+    padding-bottom: 150px;
+    min-height: 100vh;
 
-	&__container {
-		min-height: 100vh;
-		padding-bottom: 150px;
+    @include tablet {
+      padding-bottom: 100px;
+    }
 
-		@include tablet {
-			padding-bottom: 100px;
-		}
+    @include mobile {
+      padding-bottom: 70px;
+    }
+  }
 
-		@include mobile {
-			padding-bottom: 70px;
-		}
-	}
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
-	&__content {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
+    @include big-desktop {
+      gap: 32px;
+    }
 
-		@include big-desktop {
-			gap: 32px;
-		}
+    @include tablet {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
 
-		@include tablet {
-			gap: 50px;
-			flex-direction: column;
-		}
+  &__left {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
 
-	}
+  &__info {
+    margin-bottom: 100px;
+    max-width: 676px;
 
-	&__left {
-		ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
+    ul {
+      display: flex;
+      flex-direction: column;
 
+      // gap: 24px;
+    }
 
-	}
+    ul > li {
+      line-height: 1;
+    }
 
-	&__info {
-		margin-bottom: 100px;
-		max-width: 676px;
+    span,
+    a {
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 220%;
+      color: var(--primary2);
 
-		@include big-desktop {
-			max-width: 550px;
-			margin-bottom: 50px;
-		}
+      @include mobile {
+        font-size: 18px;
+      }
+    }
 
-		@include tablet {
-			max-width: 100%;
-			margin-bottom: 30px;
-		}
+    a {
+      @include hover {
+        color: var(--primary3);
+      }
+    }
 
-		ul {
-			display: flex;
-			flex-direction: column;
-			// gap: 24px;
-		}
+    @include big-desktop {
+      margin-bottom: 50px;
+      max-width: 550px;
+    }
 
-		ul>li {
-			line-height: 1;
-		}
+    @include tablet {
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
+  }
 
-		span,
-		a {
-			font-weight: 300;
-			font-size: 22px;
-			line-height: 220%;
-			color: var(--primary2);
+  &__social {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
 
-			@include mobile {
-				font-size: 18px;
-			}
+      @include mobile {
+        gap: 24px;
+      }
+    }
 
+    ul > li > a > svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--primary3);
 
-		}
+      @include mobile {
+        width: 28px;
+        height: 28px;
+      }
+    }
 
-		a {
-			@include hover {
-				color: var(--primary3);
-			}
-		}
-	}
+    ul > li > a {
+      @include hover {
+        svg {
+          fill: var(--primary2);
+        }
+      }
+    }
+  }
 
-	&__social {
-
-		ul {
-			display: flex;
-			align-items: center;
-			gap: 32px;
-
-			@include mobile {
-				gap: 24px;
-			}
-		}
-
-		ul>li>a>svg {
-			width: 32px;
-			height: 32px;
-			fill: var(--primary3);
-
-			@include mobile {
-				width: 28px;
-				height: 28px;
-			}
-
-
-		}
-
-		ul>li>a {
-
-			@include hover {
-				svg {
-
-					fill: var(--primary2);
-
-				}
-			}
-		}
-	}
-
-	&__right {
-		max-width: 845px;
-		width: 100%;
-
-		@include tablet {
-			max-width: 100%;
-		}
-
-		iframe {
-			height: 533px;
-			width: 845px;
-			filter: grayscale(100%);
-
-			@include big-desktop {
-				width: 612px;
-				height: 386px;
-			}
-
-			@include tablet {
-				width: 100%;
-				height: 446px;
-			}
-
-			@include mobile {
-				height: 250px;
-			}
-		}
-	}
+  &__right {
 
 
+    iframe {
+      width: 845px;
+      height: 533px;
+      filter: grayscale(100%);
+
+      @include big-desktop-110 {
+        width: 712px;
+        height: 486px;
+      }
+
+      @include big-desktop-125 {
+        width: 612px;
+        height: 386px;
+      }
+
+      @include big-desktop {
+        width: 612px;
+        height: 386px;
+      }
+
+      @include big-desktop-150 {
+        width: 512px;
+        height: 386px;
+      }
+
+      @include tablet {
+        width: 100%;
+        height: 446px;
+      }
+
+      @include mobile {
+        height: 250px;
+      }
+    }
+
+    @include tablet {
+      
+      width: 100%;
+    }
+
+
+  }
 }

@@ -1,87 +1,81 @@
 .modalComponent {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: var(--primary4);
-	z-index: var(--z-modal);
-	opacity: 0;
-	visibility: hidden;
-	padding-top: 30px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: var(--z-modal);
+  overflow-y: auto;
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  background: var(--primary4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
-	@include mobile {
-		padding-top: 50px;
-	}
+  .footer {
+    position: relative;
+    z-index: 0;
+    padding-top: 0;
+    padding-bottom: 30px;
 
+    .footer__form .title {
+      @include big-desktop {
+        font-size: 30px;
+      }
 
-	&.modal--active {
+      @include mobile {
+        font-size: 24px;
+      }
+    }
 
-		visibility: visible;
-		opacity: 1;
-	}
+    .footer__content {
+      margin-bottom: 0;
+    }
+  }
 
-	-webkit-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	overflow-y: auto;
+  .modal--menu--always {
+    position: relative;
 
-	.footer {
-		position: relative;
-		padding-top: 0;
-		padding-bottom: 30px;
-		z-index: 0;
+    .menu__close {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
 
-		.footer__form .title {
+      @include big-desktop {
+        margin-bottom: 1rem;
+      }
 
-			@include big-desktop {
-				font-size: 46px;
-			}
+      @include tablet {
+        margin-bottom: 0;
+      }
 
-			@include mobile {
-				font-size: 24px;
-			}
-		}
+      @include mobile {
+        position: absolute;
+        right: 18px;
+        top: 16px;
+      }
+    }
+  }
 
-		.footer__content {
-			margin-bottom: 0;
-		}
+  .modal--menu--always .menu__close {
+    @include mobile {
+      top: -34px;
+      z-index: 10;
+    }
+  }
 
+  &.modal--active {
+    opacity: 1;
+    visibility: visible;
+  }
 
-	}
+  @include big-desktop-125 {
+    padding-top: 30px;
+  }
 
-	.modal--menu--always {
-		position: relative;
-		
-		
-		
-		
-
-		.menu__close {
-			display: flex;
-			justify-content: flex-end;
-			margin-bottom: 1rem;
-
-			@include big-desktop {
-				margin-bottom: 1rem;
-			}
-
-			@include tablet {
-				margin-bottom: 0;
-			}
-
-			@include mobile {
-				position: absolute;
-				top: 16px;
-				right: 18px;
-			}
-		}
-	}
-
-	.modal--menu--always .menu__close {
-		@include mobile {
-			z-index: 10;
-			top: -34px;
-		}
-	}
+  @include mobile {
+    padding-top: 50px;
+  }
 }

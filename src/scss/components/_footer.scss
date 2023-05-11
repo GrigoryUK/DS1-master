@@ -1,37 +1,40 @@
 .footer {
-  background: var(--primary4);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: var(--z-contact);
   padding-top: 130px;
   padding-bottom: 30px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  z-index: var(--z-contact);
-
-  @include tablet {
-    padding-top: 100px;
-    padding-bottom: 20px;
-    bottom: auto;
-    left: auto;
-    position: relative;
-  }
-
-  @include mobile {
-    padding-top: 50px;
-  }
+  background: var(--primary4);
 
   span {
     color: var(--primary1);
   }
 
+
+
   &__decor {
     position: absolute;
-    top: 0;
     left: -7rem;
+    top: 0;
+
+    @include big-desktop-110 {
+      left: -11rem;
+    }
+
+    @include big-desktop-125 {
+      max-width: 780px;
+    }
 
     @include big-desktop {
-      top: 1rem;
       left: -20rem;
+      top: 1rem;
+    }
+
+    @include big-desktop-150 {
+      left: -13rem;
+      top: 0;
     }
 
     @include tablet {
@@ -43,6 +46,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 80px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    @include big-desktop-125 {
+      gap: 20px;
+    }
 
     @include big-desktop {
       grid-template-columns: 40% 60%;
@@ -59,12 +72,6 @@
 
     @include mobile {
       margin-bottom: 40px;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
     }
   }
 
@@ -87,47 +94,47 @@
       @include mobile {
         display: flex;
         column-gap: 80px;
-        row-gap: 0px;
         flex-wrap: wrap;
+        row-gap: 0;
       }
     }
 
     ul > li {
-      &:nth-child(1) {
-        order: 1;
-      }
-
-      &:nth-child(2) {
-        order: 3;
-      }
-
       &:last-child {
         margin-top: 100px;
-
-        @include tablet {
-          margin-top: 50px;
-        }
-
-        @include mobile {
-          margin-top: 0;
-          order: 2;
-        }
 
         a {
           position: relative;
           line-height: 1.1;
 
           &::after {
-            display: block;
+            content: "";
             position: absolute;
             left: 0;
+            display: block;
             width: 100%;
             height: 1px;
             background-color: var(--primary1);
-            content: "";
             transition: all 0.2s ease;
           }
         }
+
+        @include tablet {
+          margin-top: 50px;
+        }
+
+        @include mobile {
+          order: 2;
+          margin-top: 0;
+        }
+      }
+
+      &:nth-child(1) {
+        order: 1;
+      }
+
+      &:nth-child(2) {
+        order: 3;
       }
     }
 
@@ -137,6 +144,10 @@
       font-size: 22px;
       line-height: 200%;
       color: var(--primary1);
+
+      @include big-desktop-125 {
+        font-size: 18px;
+      }
 
       @include tablet {
         font-size: 18px;
@@ -159,18 +170,18 @@
   &__social {
     padding-bottom: 20px;
 
-    @include mobile {
-      padding-bottom: 0;
-    }
-
     .subtitle {
       display: block;
+      margin-bottom: 26px;
       font-family: "Inter";
       font-weight: 300;
       font-size: 18px;
       line-height: 160%;
       color: var(--primary1);
-      margin-bottom: 26px;
+
+      @include big-desktop-125 {
+        font-size: 18px;
+      }
 
       @include mobile {
         font-size: 14px;
@@ -201,70 +212,95 @@
         fill: var(--primary3);
       }
     }
+
+    @include mobile {
+      padding-bottom: 0;
+    }
   }
 
   &__form {
-    @include tablet {
-      width: 100%;
-    }
-
     .title {
-      font-size: 54px;
+      margin-bottom: 30px;
       font-weight: 400;
+      font-size: 54px;
       text-transform: uppercase;
       color: var(--primary1);
-      margin-bottom: 30px;
+
+      @include big-desktop-110 {
+        font-size: 46px;
+      }
+
+      @include big-desktop-125 {
+        font-size: 36px;
+      }
+
+      @include big-desktop {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
 
       @include tablet {
         font-size: 46px;
       }
 
       @include mobile {
-        font-size: 24px;
         margin-bottom: 20px;
+        font-size: 24px;
       }
     }
 
     .text {
       p {
-        margin: 0;
-        color: var(--primary1);
+        margin: 0 0 70px;
         max-width: 814px;
-        font-size: 22px;
         font-weight: 300;
-        margin-bottom: 70px;
+        font-size: 22px;
+        color: var(--primary1);
+
+        @include big-desktop-110 {
+          margin: 0 0 40px;
+        }
+
+        @include big-desktop-125 {
+          margin: 0 0 20px;
+          font-size: 18px;
+        }
 
         @include tablet {
+          margin-bottom: 50px;
           max-width: 634px;
           font-size: 18px;
-          margin-bottom: 50px;
         }
 
         @include mobile {
-          font-size: 16px;
           margin-bottom: 30px;
+          font-size: 16px;
         }
       }
+    }
+
+    @include tablet {
+      width: 100%;
     }
   }
 
   &__description {
     display: none;
 
+    ul {
+      margin-top: -8px;
+    }
+
     @include tablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
       margin-bottom: 50px;
+      gap: 15px;
     }
 
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
       gap: 30px;
-    }
-
-    ul {
-      margin-top: -8px;
     }
   }
 
@@ -272,24 +308,19 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding-bottom: 60px;
     margin-bottom: 30px;
     border-bottom: 1px solid #bebebe;
-
-    @include mobile {
-      display: flex;
-      flex-direction: column;
-    }
+    padding-bottom: 60px;
+    gap: 20px;
 
     .success {
       position: absolute;
-      color: #1bc679;
-      bottom: 1rem;
       left: 0;
+      bottom: 1rem;
       font-weight: 300;
       font-size: 18px;
       line-height: 160%;
+      color: #1bc679;
       opacity: 0;
       visibility: hidden;
       transition: all 0.2s ease;
@@ -301,6 +332,7 @@
 
       @include mobile {
         bottom: 0.3rem;
+
         // text-align: center;
         font-size: 16px;
       }
@@ -308,25 +340,19 @@
 
     input,
     textarea {
-      width: 100%;
-      resize: none;
-      border: none;
       outline: none;
-      background: none;
-      padding-bottom: 18px;
+      border: none;
       border-bottom: 1px solid #bebebe;
+      border-radius: 0;
+      padding-bottom: 18px;
+      width: 100%;
       font-family: "Inter";
       font-weight: 300;
       font-size: 18px;
-      color: var(--primary1);
       line-height: 160%;
-      border-radius: 0;
-
-      @include mobile {
-        font-size: 16px;
-        padding-bottom: 10px;
-        padding-left: 0;
-      }
+      color: var(--primary1);
+      background: none;
+      resize: none;
 
       &::placeholder {
         color: var(--primary1);
@@ -341,11 +367,41 @@
         transition: background-color 5000s ease-in-out 0s;
       }
 
+      @include big-desktop-110 {
+        padding-bottom: 10px;
+        font-size: 16px;
+      }
+
+      @include mobile {
+        padding-bottom: 10px;
+        padding-left: 0;
+        font-size: 16px;
+      }
+
       @include hover {
         &::placeholder {
           opacity: 0.2;
         }
       }
+    }
+
+    @include big-desktop-110 {
+      padding-bottom: 40px;
+    }
+
+    @include big-desktop {
+      gap: 10px;
+    }
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 60px;
+      gap: 20px;
     }
   }
 
@@ -356,21 +412,45 @@
       position: absolute;
       right: 0;
       top: 4px;
-      color: var(--primary3);
-      transition: all 0.2s ease;
       font-weight: 300;
       font-size: 14px;
       line-height: 160%;
+      color: var(--primary3);
       opacity: 0;
       visibility: hidden;
-
-      @include mobile {
-        top: 0;
-      }
+      transition: all 0.2s ease;
 
       &.active {
         opacity: 1;
         visibility: visible;
+      }
+
+      @include mobile {
+        top: 0;
+      }
+    }
+
+    input,
+    textarea {
+      &:read-only {
+        opacity: 0.7;
+      }
+    }
+
+    &:last-child {
+      grid-column: 1 / 2 span;
+
+      textarea {
+        height: 50px;
+
+        @include big-desktop-110 {
+          overflow: hidden;
+          height: 37.4px;
+        }
+
+        @include mobile {
+          height: 39px;
+        }
       }
     }
 
@@ -386,33 +466,10 @@
         }
       }
     }
-
-    &:last-child {
-      textarea {
-        height: 50px;
-
-        @include mobile {
-          height: 39px;
-        }
-      }
-
-      grid-column: 1 / 2 span;
-    }
-
-    input,
-    textarea {
-      &:read-only {
-        opacity: 0.7;
-      }
-    }
   }
 
   &__file {
     margin-bottom: 40px;
-
-    @include mobile {
-      margin-bottom: 30px;
-    }
 
     input {
       display: none;
@@ -425,42 +482,41 @@
 
       .button {
         position: relative;
-        background: #3d3d3d;
-        width: 60px;
-        min-width: 60px;
-        height: 60px;
-        border-radius: 100px;
-        display: flex;
+        display: block;
         align-items: center;
         justify-content: center;
+        border-radius: 100px;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        background: #3d3d3d;
         transition: all 0.2s ease;
-        display: block;
+
+        svg {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 14px;
+          height: 20px;
+          fill: var(--primary1);
+          transform: translate(-50%, -50%);
+        }
 
         @include mobile {
           width: 50px;
           height: 50px;
           min-width: 50px;
         }
-
-        svg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 14px;
-          height: 20px;
-          fill: var(--primary1);
-        }
       }
 
       .file-input {
-        color: var(--primary1);
         font-weight: 300;
         font-size: 18px;
         text-decoration-line: underline;
-        text-underline-offset: 4px;
-        cursor: pointer;
+        color: var(--primary1);
         transition: all 0.2s ease;
+        cursor: pointer;
+        text-underline-offset: 4px;
 
         @include mobile {
           font-size: 14px;
@@ -476,6 +532,14 @@
           color: var(--primary3);
         }
       }
+    }
+
+    @include big-desktop {
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
     }
   }
 
@@ -495,42 +559,32 @@
       align-items: center;
       gap: 40px;
 
-      @include mobile {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
       .button {
-        padding: 13px 44px 16px 44px;
+        border-radius: 100px;
+        padding: 13px 44px 16px;
         font-weight: 500;
         font-size: 22px;
         line-height: 1.4;
-        background: var(--primary1);
         color: var(--primary2);
-        border-radius: 100px;
+        background: var(--primary1);
 
         @include mobile {
           padding: 15px 0;
-          font-size: 16px;
           width: 100%;
+          font-size: 16px;
         }
 
         @include hover {
-          background: var(--primary3);
           color: var(--primary1);
+          background: var(--primary3);
         }
       }
 
       .confirm {
+        max-width: 438px;
         font-weight: 300;
         font-size: 14px;
         line-height: 1.6;
-        max-width: 438px;
-
-        @include mobile {
-          font-size: 14px;
-        }
 
         span {
           color: #b5b5b5;
@@ -538,48 +592,58 @@
         }
 
         a {
-          opacity: 0.5;
-          color: var(--primary1);
           margin-left: 0.5em;
+          color: var(--primary1);
+          opacity: 0.5;
 
           @include hover {
             opacity: 1;
           }
         }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
       }
     }
   }
 
   .button--up {
-    display: block;
     position: relative;
-    width: 60px;
-    min-width: 60px;
-    height: 60px;
-    background: #3d3d3d;
+    display: block;
     border-radius: 100px;
-
-    @include mobile {
-      width: 50px;
-      min-width: 50px;
-      height: 50px;
-    }
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: #3d3d3d;
 
     i {
       position: absolute;
-      top: 55%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-135deg);
+      top: 55%;
+      display: inline-block;
       border: solid var(--primary1);
       border-width: 0 2px 2px 0;
-      display: inline-block;
       padding: 4px;
+      transform: translate(-50%, -50%) rotate(-135deg);
       transition: all 0.2s ease;
 
       @include mobile {
-        padding: 3px;
         border-width: 0 1px 1px 0;
+        padding: 3px;
       }
+    }
+
+    @include mobile {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
     }
 
     @include hover {
@@ -590,12 +654,6 @@
   &__copy {
     display: block;
 
-    @include mobile {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
     &--text {
       font-weight: 300;
       font-size: 16px;
@@ -603,8 +661,8 @@
 
       @include mobile {
         display: block;
-        font-size: 13px;
         max-width: 60%;
+        font-size: 13px;
       }
     }
 
@@ -615,18 +673,36 @@
         display: block;
       }
     }
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  @include tablet {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+
+  @include mobile {
+    padding-top: 50px;
   }
 }
 
 .button-footer-submit {
   &:disabled {
-    background: var(--primary2);
     color: var(--primary1);
+    background: var(--primary2);
     cursor: default;
 
     @include hover {
-      background: var(--primary2);
       color: var(--primary1);
+      background: var(--primary2);
     }
   }
 }
