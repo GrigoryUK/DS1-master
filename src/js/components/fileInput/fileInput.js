@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'jquery'
 export default function fileInput() {
 	const $fileContainer = $('.footer__file'),
 		$file = $fileContainer.find('#file'),
@@ -9,10 +9,15 @@ export default function fileInput() {
 	// on file change
 	$file.on('change', function (event) {
 		var fileName = $file.val().split('\\').pop();
+    console.log(fileName.length);
+
+    if (fileName.length <= 0) {
+      return;
+    }
 		if (fileName) {
 			// console.log($file)
 			$labelText.text(fileName);
-			
+
 		} else {
 			$labelText.text(labelDefault);
 		}

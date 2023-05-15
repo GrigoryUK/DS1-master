@@ -1,218 +1,234 @@
 .home {
+  &__container {
+    padding-bottom: 150px;
 
-	&__container {
-		padding-bottom: 150px;
+    @include tablet {
+      padding-bottom: 100px;
+    }
 
-		@include tablet {
-			padding-bottom: 100px;
-		}
+    @include mobile {
+      padding-bottom: 70px;
+    }
 
-		@include mobile {
-			padding-bottom: 70px;
-		}
+    .projectMain {
+      margin-bottom: 150px;
 
-		.projectMain {
-			margin-bottom: 150px;
+      @include tablet {
+        margin-bottom: 112px;
+      }
 
-			@include tablet {
-				margin-bottom: 112px;
-			}
-
-			@include mobile {
-				margin-bottom: 90px;
-			}
-		}
-	}
+      @include mobile {
+        margin-bottom: 90px;
+      }
+    }
+  }
 }
 
 .sectionHome {
+  .textComponent.home {
+    max-width: 1143px;
+    margin: 0 auto;
+    margin-bottom: 160px;
 
-	.textComponent.home {
-		max-width: 1143px;
-		margin: 0 auto;
-		margin-bottom: 160px;
+    @include big-desktop {
+      margin-bottom: 200px;
+    }
 
-		@include big-desktop {
-			margin-bottom: 200px;
-		}
+    @include tablet {
+      margin-bottom: 140px;
+      padding: 0 70px;
+    }
 
-		@include tablet {
-			margin-bottom: 140px;
-			padding: 0 70px;
-		}
+    @include mobile {
+      margin-bottom: 110px;
+      padding: 0;
+    }
 
-		@include mobile {
-			margin-bottom: 110px;
-			padding: 0;
-		}
+    p {
+      line-height: 160%;
+    }
 
-		p {
-			line-height: 160%;
-		}
+    .icon {
+      &-left {
+        top: -2rem;
+        left: -3rem;
 
-		.icon {
+        @include tablet {
+          left: 0rem;
+        }
 
-			&-left {
-				top: -2rem;
-				left: -3rem;
+        @include mobile {
+          top: -2.6rem;
+        }
+      }
 
-				@include tablet {
-					left: 0rem;
-				}
+      &-right {
+        bottom: -2rem;
+        right: -2rem;
 
-				@include mobile {
-					top: -2.6rem;
-				}
-			}
+        @include tablet {
+          bottom: -2rem;
+          right: 1rem;
+        }
 
-			&-right {
-				bottom: -2rem;
-				right: -2rem;
+        @include mobile {
+          bottom: -2.6rem;
+          right: 0rem;
+        }
+      }
+    }
 
-				@include tablet {
-					bottom: -2rem;
-					right: 1rem;
-				}
+    svg {
+      width: 30px;
+      height: 40px;
+      fill: #dfdfdf;
+      position: absolute;
 
+      @include mobile {
+        width: 24px;
+        height: 30px;
+      }
 
-				@include mobile {
-					bottom: -2.6rem;
-					right: 0rem;
-				}
-			}
-		}
+      &.active {
+        fill: var(--primary3);
+      }
+    }
+  }
 
-		svg {
-			width: 30px;
-			height: 40px;
-			fill: #DFDFDF;
-			position: absolute;
+  .sectionSliders {
+    margin-bottom: 180px;
 
-			@include mobile {
-				width: 24px;
-				height: 30px;
-			}
+    @include tablet {
+      margin-bottom: 120px;
+    }
 
-			&.active {
-				fill: var(--primary3);
-			}
-		}
-	}
+    @include mobile {
+      margin-bottom: 80px;
+    }
+  }
 
-	.sectionSliders {
-		 margin-bottom: 180px;
+  .titleComponent {
+    margin-bottom: 50px;
 
-		 @include tablet {
-			margin-bottom: 120px;
-		 }
+    @include tablet {
+      margin-bottom: 40px;
+    }
 
-		 @include mobile {
-			margin-bottom: 80px;
-		 }
-	}
-
-	.titleComponent {
-		margin-bottom: 50px;
-
-		@include tablet {
-			margin-bottom: 40px;
-		}
-
-		@include mobile {
-			margin-bottom: 30px;
-		}
-	}
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .sectionSliders {
-	
-	
+  .swiper {
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+  }
 
-	.swiper {
+  .swiper__one {
+    cursor: pointer;
 
-		img {
-			width: 100%;
-			height: auto;
-			max-width: 100%;
-		}
-	}
+    .swiper-slide {
+      user-select: none;
+      max-width: 150px;
+      margin: 0 60px;
 
-	.swiper__one {
-		cursor: pointer;
+      @include tablet {
+        max-width: 94px;
+        margin: 0 40px;
+      }
 
-		
+      @include mobile {
+        max-width: 74px;
+        margin: 0 16px;
+      }
+    }
 
-		.swiper-slide {
-			user-select: none;
-			max-width: 150px;
-			margin: 0 60px;
+    .swiper-wrapper {
+      align-items: center;
+      transition-timing-function: linear;
+    }
+  }
 
-			@include tablet {
-				max-width: 94px;
-				margin: 0 40px;
-			}
+  .swiper__two {
+    cursor: pointer;
+    display: none;
 
-			@include mobile {
-				max-width: 74px;
-				margin: 0 16px;
+    @include mobile {
+      display: block;
+    }
 
-			}
-		}
+    .swiper-slide {
+      user-select: none;
+      max-width: 150px;
+      margin: 0 60px;
 
-		.swiper-wrapper {
-			align-items: center;
-			transition-timing-function: linear;
-		}
+      @include tablet {
+        max-width: 94px;
+        margin: 0 40px;
+      }
 
+      @include mobile {
+        max-width: 74px;
+        margin: 0 16px;
+      }
+    }
 
-	}
+    .swiper-wrapper {
+      align-items: center;
 
-	.swiper__two {
-		cursor: pointer;
-		display: none;
-
-		@include mobile {
-			display: block;
-		}
-
-		.swiper-slide {
-			user-select: none;
-			max-width: 150px;
-			margin: 0 60px;
-
-			@include tablet {
-				max-width: 94px;
-				margin: 0 40px;
-			}
-
-			@include mobile {
-				max-width: 74px;
-				margin: 0 16px;
-
-			}
-		}
-
-		.swiper-wrapper {
-			align-items: center;
-
-			transition-timing-function: linear;
-		}
-
-
-	}
+      transition-timing-function: linear;
+    }
+  }
 }
 
 .sectionCases {
+  .portfolio__content {
+    margin-bottom: 70px;
 
-	.portfolio__content {
-		margin-bottom: 70px;
+    @include tablet {
+      margin-bottom: 50px;
+    }
 
-		@include tablet {
-			margin-bottom: 50px;
-		}
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+}
 
-		@include mobile {
-			margin-bottom: 40px;
-		}
-	}
+.loop-slider-wrap {
+  top: 0;
+  left: 0;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.slide-area {
+  margin: 0 auto;
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-area ul {
+  height: 100px;
+  float: left;
+  overflow: hidden;
+  padding: 0;
+}
+
+.slide-area ul li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  display: inline;
+  overflow: hidden;
+  margin-right: 100px;
 }

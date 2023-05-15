@@ -7,12 +7,11 @@
   padding-bottom: 30px;
   width: 100%;
   background: var(--primary4);
+  min-height: 100vh;
 
   span {
     color: var(--primary1);
   }
-
-
 
   &__decor {
     position: absolute;
@@ -687,6 +686,7 @@
     bottom: auto;
     padding-top: 100px;
     padding-bottom: 20px;
+    min-height: 0;
   }
 
   @include mobile {
