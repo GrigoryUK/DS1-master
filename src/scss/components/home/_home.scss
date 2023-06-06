@@ -11,6 +11,7 @@
     }
 
     .projectMain {
+      display: flex;
       margin-bottom: 150px;
 
       @include tablet {
