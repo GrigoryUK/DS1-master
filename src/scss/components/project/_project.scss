@@ -68,8 +68,10 @@
   &__tablet {
     display: none;
 
-    img {
-      height: auto;
+    img,
+    video {
+      max-height: 216px;
+      min-height: 212px;
     }
 
     @include mobile {

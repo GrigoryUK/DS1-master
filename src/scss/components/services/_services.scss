@@ -118,38 +118,75 @@
       &__grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 266px);
+        // grid-template-rows: repeat(2, 266px);
+        grid-template-rows: repeat(2, 1fr);
         gap: 10px;
 
-        @include big-desktop {
-          grid-template-rows: repeat(2, 180px);
-        }
+        // @include big-desktop {
+        //   grid-template-rows: repeat(2, 180px);
+        // }
 
-        @include tablet {
-          grid-template-rows: repeat(2, 240px);
-        }
+        // @include tablet {
+        //   grid-template-rows: repeat(2, 240px);
+        // }
 
-        @include small-tablet {
-          grid-template-rows: repeat(2, 220px);
-        }
+        // @include small-tablet {
+        //   grid-template-rows: repeat(2, 220px);
+        // }
 
-        @include mobile {
-          grid-template-rows: repeat(2, 106px);
-        }
+        // @include mobile {
+        //   grid-template-rows: repeat(2, 106px);
+        // }
 
         img {
           &:nth-child(1) {
             grid-column: 1 / 1 span;
+            max-height: 260px;
+
+            @include tablet {
+              max-height: 300px;
+            }
+
+            @include small-tablet {
+              max-height: 220px;
+            }
+
+            @include mobile {
+              max-height: 106px;
+            }
           }
 
           &:nth-child(2) {
             grid-column: 1 / 1 span;
             grid-row: 1 / 1 span;
+            max-height: 260px;
+
+            @include tablet {
+              max-height: 300px;
+            }
+            @include small-tablet {
+              max-height: 220px;
+            }
+
+            @include mobile {
+              max-height: 106px;
+            }
           }
 
           &:nth-child(3) {
-            // grid-column: 2 / 1 span;
             grid-row: 1 / 2 span;
+            max-height: 530px;
+
+            @include tablet {
+              max-height: 610px;
+            }
+            @include small-tablet {
+              max-height: 452px;
+            }
+
+            @include mobile {
+              max-height: 222px;
+            }
           }
         }
       }
